@@ -1,0 +1,132 @@
+:root {
+    /* color */
+    --color-blue: #045fd4;
+    --color-yellow: #ffff00;
+    --color-pink: #ff76edf6;
+    --color-bg: #808080;
+    --color-item-bg: #f5f5dc;
+    --color-nav-menu:#d49466;
+
+    /* font size */
+    --font-size-large: 18px;
+    --font-size-smale: 10px;
+
+    /* icon size */
+    --icon-size-logo: 50px;
+    --icon-size-large: 30px;
+    --icon-size-small: 20px;
+
+    /* transform scale */
+    --transform-scale-navbar-btn: 1.15;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Roboto;
+    background-color: var(--color-bg);
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* navbar */
+.navbar .navbar_logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(var(--icon-size-logo)*3);
+    /* background-color: var(--color-bg); */
+}
+
+.navbar .navbar_logo i {
+    font-size: var(--icon-size-logo);
+    color:paleturquoise;
+}
+
+.navbar .navbar_menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color:var(--color-bg); */
+}
+
+.navbar .navbar_menu button {
+    width: 150px;
+    border: 0px;
+    border-radius: 4px;
+    font-size: var(--icon-size-small);
+    background-color: var(--color-nav-menu);
+    margin: 10px;
+    padding: 5px;
+}
+
+.navbar .navbar_menu button.shirtBtn,
+.navbar .navbar_menu button.socksBtn,
+.navbar .navbar_menu button.mittenBtn {
+    background-color: transparent;
+    font-size: var(--icon-size-large);
+}
+
+.navbar .navbar_menu button i.fa-shirt {
+    color: var(--color-blue);
+}
+
+.navbar .navbar_menu button i.fa-socks {
+    color: var(--color-yellow);
+}
+
+.navbar .navbar_menu button i.fa-mitten {
+    color: var(--color-pink);
+}
+
+.navbar .navbar_menu button.blueBtn {
+    background-color: var(--color-blue);
+}
+
+.navbar .navbar_menu button.yellowBtn {
+    background-color: var(--color-yellow);
+}
+
+.navbar .navbar_menu button.pinkBtn {
+    background-color: var(--color-pink);
+}
+
+.navbar .navbar_menu button:hover {
+    transform: scale(var(--transform-scale-navbar-btn));
+}
+
+.item_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-bg);
+    margin-top: 20px;
+}
+
+.item_list .item {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--color-item-bg);
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 7px 20px;
+    width: 300px;
+}
+
+.item_list .item i {
+    font-size: var(--icon-size-small);
+    width: var(--icon-size-small);
+}
+.item_list .item .text {
+    margin-left: 10px;
+}
