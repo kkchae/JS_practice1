@@ -64,7 +64,9 @@ ul {
     justify-content: space-between;
 }
 
-.wrap .header .header_menu .select_color {
+.wrap .header .header_menu .select_color,
+.wrap .header .header_menu .select_gender {
+    display: flex;
     justify-content: space-between;
 }
 
@@ -113,7 +115,7 @@ ul {
     transform: scale(var(--transform-scale-header-btn));
 }
 
-.item_list {
+.wrap .item_list {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -122,7 +124,7 @@ ul {
     margin-top: 20px;
 }
 
-.item_list ul .item {
+.wrap .item_list ul .item {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -134,12 +136,13 @@ ul {
     width: 300px;
 }
 
-.item_list .item i {
+.wrap .item_list .item i {
     font-size: var(--icon-size-small);
     /* width: var(--icon-size-small); */
     padding-right: 10px;
 }
-.item_list .item .text {
+
+.wrap .item_list .item .text {
     /* margin-left: 10px; */
 }
 
@@ -159,27 +162,44 @@ ul {
 }
 
 @media screen and (max-width: 535px) {
-    .wrap .header {
+    .wrap .header .header_logo i {
         transform: scale(0.8);
     }
  
     .wrap .header .header_menu .select_cloth_type {
         flex-direction: column;
+        transform: scale(0.8);
     }
 
     .wrap .header .header_menu .select_color {
         flex-direction: column;
+        transform: scale(0.8);
     }
 
-    .wrap .header .header_menu .select_sex {
+    .wrap .header .header_menu .select_gender {
         flex-direction: column;
+        transform: scale(0.8);
+    }
+
+    .wrap .header .header_menu {
+        flex-direction: row;
+    }
+
+    .wrap .header .header_menu button {
+        width: 100px;
+        border: 0px;
+        border-radius: 4px;
+        font-size: var(--icon-size-small);
+        background-color: var(--color-nav-menu);
+        margin: 3px;
+        padding: 5px;
     }
 
     .wrap .item_list ul .item {
         margin-top: 0px;
         margin-bottom: 0px;
         padding: 7px 20px;
-        width: 200px;
+        width: 220px;
         transform: scale(0.8);    
     }
 }
