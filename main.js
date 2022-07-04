@@ -1,64 +1,12 @@
 "use strict";
 
-//import main from "json-to-txt";
-
-const shirtBtn = document.querySelector(".wrap .header .header_menu .select_cloth_type button.shirtBtn");
-const socksBtn = document.querySelector(".wrap .header .header_menu .select_cloth_type button.socksBtn");
-const mittenBtn = document.querySelector(".wrap .header .header_menu .select_cloth_type button.mittenBtn");
-const blueBtn = document.querySelector(".wrap .header .header_menu .select_color button.blueBtn");
-const yellowBtn = document.querySelector(".wrap .header .header_menu .select_color button.yellowBtn");
-const pinkBtn = document.querySelector(".wrap .header .header_menu .select_color button.pinkBtn");
-const maleBtn = document.querySelector(".wrap .header .header_menu .select_gender button.maleBtn");
-const femaleBtn = document.querySelector(".wrap .header .header_menu .select_gender button.femaleBtn");
-const itemList = document.querySelector(".item_list ul");
-
-shirtBtn.addEventListener("click", () => {
-  //console.log("shirt button clicked");
-  const selectedItems = clothItemList.filter((item) => item.clothType == "shirt");
-  updateItemList(selectedItems);
-});
-
-socksBtn.addEventListener("click", () => {
-  //console.log("socks button clicked");
-  const selectedItems = clothItemList.filter((item) => item.clothType == "socks");
-  updateItemList(selectedItems);
-});
-
-mittenBtn.addEventListener("click", () => {
-  //console.log("mitten button clicked");
-  const selectedItems = clothItemList.filter((item) => item.clothType == "mitten");
-  updateItemList(selectedItems);
-});
-
-blueBtn.addEventListener("click", () => {
-  //console.log("blue button clicked");
-  const selectedItems = clothItemList.filter((item) => item.clothColor == "blue");
-  updateItemList(selectedItems);
-});
-
-yellowBtn.addEventListener("click", () => {
-  //console.log("yellow button clicked");
-  const selectedItems = clothItemList.filter((item) => item.clothColor == "yellow");
-  updateItemList(selectedItems);
-});
-
-pinkBtn.addEventListener("click", () => {
-  //console.log("pink button clicked");
-  const selectedItems = clothItemList.filter((item) => item.clothColor == "pink");
-  updateItemList(selectedItems);
-});
-
-maleBtn.addEventListener("click", () => {
-  //console.log("pink button clicked");
-  const selectedItems = clothItemList.filter((item) => item.genderType == "male");
-  updateItemList(selectedItems);
-});
-
-femaleBtn.addEventListener("click", () => {
-  //console.log("pink button clicked");
-  const selectedItems = clothItemList.filter((item) => item.genderType == "female");
-  updateItemList(selectedItems);
-});
+function download(content, fileName, contentType) {
+  var a = document.createElement("a");
+  var file = new Blob([content], { type: contentType });
+  a.href = URL.createObjectURL(file);
+  a.download = fileName;
+  a.click();
+}
 
 class ClothItem {
   constructor(id, clothType, clothColor, genderType) {
@@ -109,6 +57,35 @@ class ClothItem {
   }
 }
 
+const itemList = document.querySelector(".item_list ul");
+
+const selectClothType = document.querySelectorAll(".wrap .header .header_menu .select_cloth_type button");
+selectClothType.forEach((button, index) => {
+  //console.log(button, index);
+  button.addEventListener("click", () => {
+    const selectedItems = clothItemList.filter((item) => item.clothType == button.getAttribute("value"));
+    updateItemList(selectedItems);
+  });
+});
+
+const selectColor = document.querySelectorAll(".wrap .header .header_menu .select_color button");
+selectColor.forEach((button, index) => {
+  //console.log(button, index);
+  button.addEventListener("click", () => {
+    const selectedItems = clothItemList.filter((item) => item.clothColor == button.getAttribute("value"));
+    updateItemList(selectedItems);
+  });
+});
+
+const selectGender = document.querySelectorAll(".wrap .header .header_menu .select_gender button");
+selectGender.forEach((button, index) => {
+  //console.log(button, index);
+  button.addEventListener("click", () => {
+    const selectedItems = clothItemList.filter((item) => item.genderType == button.getAttribute("value"));
+    updateItemList(selectedItems);
+  });
+});
+
 const clothType = ["shirt", "socks", "mitten"];
 const clothColor = ["blue", "yellow", "pink"];
 const genderType = ["male", "female"];
@@ -120,23 +97,6 @@ const iconMale = "fa-solid fa-person";
 const iconFemale = "fa-solid fa-person-dress";
 const clothTypeIcon = [iconShirt, iconSocks, iconMitten];
 const genderTypeIcon = [iconMale, iconFemale];
-
-const clothItemList = [];
-
-let idIndex = 0;
-for (const itClothType of clothType) {
-  for (const itClothColor of clothColor) {
-    for (const itGenderType of genderType) {
-      //console.log(`[${idIndex}] ${itClothType}, ${itClothColor}, ${itGenderType}`);
-      clothItemList.push(new ClothItem(idIndex++, itClothType, itClothColor, itGenderType));
-    }
-  }
-}
-
-const clothItemJson = JSON.stringify(clothItemList);
-console.log(clothItemJson);
-
-updateItemList(clothItemList);
 
 function restoreItemList() {
   //console.log(`itemList.childElementCount: ${itemList.childElementCount}`);
@@ -175,3 +135,20 @@ function updateItemList(selectedItems) {
     itemList.appendChild(li);
   }
 }
+
+const clothItemList = [];
+
+let idIndex = 0;
+for (const itClothType of clothType) {
+  for (const itClothColor of clothColor) {
+    for (const itGenderType of genderType) {
+      //console.log(`[${idIndex}] ${itClothType}, ${itClothColor}, ${itGenderType}`);
+      clothItemList.push(new ClothItem(idIndex++, itClothType, itClothColor, itGenderType));
+    }
+  }
+}
+const clothItemJson = JSON.stringify(clothItemList);
+//console.log(clothItemJson);
+//download(clothItemJson, "data.json", "text/plain");
+
+updateItemList(clothItemList);
