@@ -1,20 +1,110 @@
 [
-  { "_id": 0, "_clothType": "shirt", "_clothColor": "blue", "_genderType": "male" },
-  { "_id": 1, "_clothType": "shirt", "_clothColor": "blue", "_genderType": "female" },
-  { "_id": 2, "_clothType": "shirt", "_clothColor": "yellow", "_genderType": "male" },
-  { "_id": 3, "_clothType": "shirt", "_clothColor": "yellow", "_genderType": "female" },
-  { "_id": 4, "_clothType": "shirt", "_clothColor": "pink", "_genderType": "male" },
-  { "_id": 5, "_clothType": "shirt", "_clothColor": "pink", "_genderType": "female" },
-  { "_id": 6, "_clothType": "socks", "_clothColor": "blue", "_genderType": "male" },
-  { "_id": 7, "_clothType": "socks", "_clothColor": "blue", "_genderType": "female" },
-  { "_id": 8, "_clothType": "socks", "_clothColor": "yellow", "_genderType": "male" },
-  { "_id": 9, "_clothType": "socks", "_clothColor": "yellow", "_genderType": "female" },
-  { "_id": 10, "_clothType": "socks", "_clothColor": "pink", "_genderType": "male" },
-  { "_id": 11, "_clothType": "socks", "_clothColor": "pink", "_genderType": "female" },
-  { "_id": 12, "_clothType": "mitten", "_clothColor": "blue", "_genderType": "male" },
-  { "_id": 13, "_clothType": "mitten", "_clothColor": "blue", "_genderType": "female" },
-  { "_id": 14, "_clothType": "mitten", "_clothColor": "yellow", "_genderType": "male" },
-  { "_id": 15, "_clothType": "mitten", "_clothColor": "yellow", "_genderType": "female" },
-  { "_id": 16, "_clothType": "mitten", "_clothColor": "pink", "_genderType": "male" },
-  { "_id": 17, "_clothType": "mitten", "_clothColor": "pink", "_genderType": "female" }
+  {
+    "_id": 0,
+    "_clothType": "shirt",
+    "_clothColor": "blue",
+    "_genderType": "male"
+  },
+  {
+    "_id": 1,
+    "_clothType": "shirt",
+    "_clothColor": "blue",
+    "_genderType": "female"
+  },
+  {
+    "_id": 2,
+    "_clothType": "shirt",
+    "_clothColor": "yellow",
+    "_genderType": "male"
+  },
+  {
+    "_id": 3,
+    "_clothType": "shirt",
+    "_clothColor": "yellow",
+    "_genderType": "female"
+  },
+  {
+    "_id": 4,
+    "_clothType": "shirt",
+    "_clothColor": "pink",
+    "_genderType": "male"
+  },
+  {
+    "_id": 5,
+    "_clothType": "shirt",
+    "_clothColor": "pink",
+    "_genderType": "female"
+  },
+  {
+    "_id": 6,
+    "_clothType": "socks",
+    "_clothColor": "blue",
+    "_genderType": "male"
+  },
+  {
+    "_id": 7,
+    "_clothType": "socks",
+    "_clothColor": "blue",
+    "_genderType": "female"
+  },
+  {
+    "_id": 8,
+    "_clothType": "socks",
+    "_clothColor": "yellow",
+    "_genderType": "male"
+  },
+  {
+    "_id": 9,
+    "_clothType": "socks",
+    "_clothColor": "yellow",
+    "_genderType": "female"
+  },
+  {
+    "_id": 10,
+    "_clothType": "socks",
+    "_clothColor": "pink",
+    "_genderType": "male"
+  },
+  {
+    "_id": 11,
+    "_clothType": "socks",
+    "_clothColor": "pink",
+    "_genderType": "female"
+  },
+  {
+    "_id": 12,
+    "_clothType": "mitten",
+    "_clothColor": "blue",
+    "_genderType": "male"
+  },
+  {
+    "_id": 13,
+    "_clothType": "mitten",
+    "_clothColor": "blue",
+    "_genderType": "female"
+  },
+  {
+    "_id": 14,
+    "_clothType": "mitten",
+    "_clothColor": "yellow",
+    "_genderType": "male"
+  },
+  {
+    "_id": 15,
+    "_clothType": "mitten",
+    "_clothColor": "yellow",
+    "_genderType": "female"
+  },
+  {
+    "_id": 16,
+    "_clothType": "mitten",
+    "_clothColor": "pink",
+    "_genderType": "male"
+  },
+  {
+    "_id": 17,
+    "_clothType": "mitten",
+    "_clothColor": "pink",
+    "_genderType": "female"
+  }
 ]

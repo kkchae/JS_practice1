@@ -136,9 +136,17 @@ function updateItemList(selectedItems) {
   }
 }
 
+//const optSelect = document.querySelector(".wrap .footer select");
+const optSelect = document.getElementById("select_option");
+
+function optionChanged(selected) {
+  const val = optSelect.options[optSelect.selectedIndex].value;
+  console.log(val);
+}
+
 const clothItemList = [];
 
-let idIndex = 0;
+/* let idIndex = 0;
 for (const itClothType of clothType) {
   for (const itClothColor of clothColor) {
     for (const itGenderType of genderType) {
@@ -146,9 +154,21 @@ for (const itClothType of clothType) {
       clothItemList.push(new ClothItem(idIndex++, itClothType, itClothColor, itGenderType));
     }
   }
-}
-const clothItemJson = JSON.stringify(clothItemList);
+} */
+//const clothItemJson = JSON.stringify(clothItemList);
 //console.log(clothItemJson);
 //download(clothItemJson, "data.json", "text/plain");
+
+const request = new XMLHttpRequest();
+request.open("GET", "./data.json", false);
+request.send(null);
+
+const objList = JSON.parse(request.responseText);
+for (const itObj of objList) {
+  //console.log(it);
+  const newItem = new ClothItem(itObj._id, itObj._clothType, itObj._clothColor, itObj._genderType);
+  clothItemList.push(newItem);
+  //console.log(newItem);
+}
 
 updateItemList(clothItemList);

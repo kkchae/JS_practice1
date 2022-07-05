@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <script type="module" src="main.js"></script>
+    <script src="main.js" defer></script>
     <script src="https://kit.fontawesome.com/ee48883309.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Oswald:wght@500&family=Roboto&family=Source+Sans+Pro&display=swap" rel="stylesheet" />
     <title>shopping mall</title>
@@ -42,17 +42,16 @@
           </li> -->
         </ul>
       </div>
-
       <div class="footer">
         <address>
           <span>Contact</span><br />
           <span>abcd@zmail.com</span><br />
           <span>012-234-567</span>
         </address>
-        <select name="" id="">
-          <option value="">--Please choose an option--</option>
-          <option value="">AAAAA</option>
-          <option value="">BBBBB</option>
+        <select id="select_option" onchange="optionChanged(this)">
+          <option value="opt0">--Please choose an option--</option>
+          <option value="opt1" selected>AAAAA</option>
+          <option value="opt2">BBBBB</option>
         </select>
       </div>
     </div>
