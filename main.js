@@ -172,3 +172,53 @@ for (const itObj of objList) {
 }
 
 updateItemList(clothItemList);
+
+const body = document.body;
+const menu = body.querySelector(".bottom_menu");
+const menuItems = body.querySelectorAll(".menu__item");
+const menuBorder = body.querySelector(".menu__border");
+let activeItem = body.querySelector(".active");
+
+const bgColorsBody = ["#ffb457", "#ff96bd", "#9999fb", "#ffe797", "#cffff1"];
+
+function clickItem(item, index) {
+  menu.style.removeProperty("--timeOut");
+
+  if (activeItem == item) return;
+
+  if (activeItem) {
+    activeItem.classList.remove("active");
+  }
+
+  item.classList.add("active");
+  body.style.backgroundColor = bgColorsBody[index];
+  activeItem = item;
+  offsetMenuBorder(activeItem, menuBorder);
+}
+
+function offsetMenuBorder(element, menuBorder) {
+  const offsetActiveItem = element.getBoundingClientRect();
+
+  console.log(`offsetActiveItem.left: ${offsetActiveItem.left}`);
+  console.log(`menu.offsetLeft: ${menu.offsetLeft}`);
+  console.log(`menuBorder.offsetWidth: ${menuBorder.offsetWidth}`);
+  console.log(`offsetActiveItem.width: ${offsetActiveItem.width}`);
+
+  const left = Math.floor(offsetActiveItem.left - menu.offsetLeft - (menuBorder.offsetWidth - offsetActiveItem.width) / 2) + "px";
+  console.log(`left: ${left}`);
+  menuBorder.style.transform = `translate3d(${left}, 0 , 0)`;
+}
+
+offsetMenuBorder(activeItem, menuBorder);
+
+console.log(menuItems);
+
+menuItems.forEach((item, index) => {
+  //console.log(`item: ${item.getAttribute("style")}, index: ${index}`);
+  item.addEventListener("click", () => clickItem(item, index));
+});
+
+window.addEventListener("resize", () => {
+  offsetMenuBorder(activeItem, menuBorder);
+  menu.style.setProperty("--timeOut", "none");
+});
